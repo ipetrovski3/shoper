@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <meta charset="UTF-8">
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-mutate-approach="sync"></script>
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <!--Replace with your tailwind.css once created-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
-
-</head>
-
-  <body>
+  </head>
+  <body class="flex flex-col min-h-screen bg-scroll" style="background-image: url(https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80)">
     <%= render 'shared/navbar' %>
-    <%= yield %>
+    <main class="flex-grow">
+      <%= yield %>
+    </main>
     <%= render 'shared/footer' %>
   </body>
 </html>

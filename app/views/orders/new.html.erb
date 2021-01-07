@@ -1,0 +1,40 @@
+<div class="mt-10 mb-10 sm:mt-0 lg:w-1/2 mx-auto">
+  <div class="md:grid md:grid-cols-3 md:gap-6">
+    <div class="md:col-span-1">
+      <div class="px-4 sm:px-0">
+        <h3 class="text-lg font-medium leading-6 text-gray-900"><%= @product.name %></h3>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5 md:mt-0 md:col-span-2">
+    <%= form_for [@product, @order] do |f| %>
+      <div class="shadow overflow-hidden sm:rounded-md">
+        <div class="px-4 py-5 bg-white sm:p-6">
+          <div class="grid grid-cols-6 gap-6">
+            <div class="col-span-6 sm:col-span-5">
+              <%= f.label :name, class:"block text-sm font-medium text-gray-700" %>
+              <%= f.text_field :name, class:"mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-md sm:text-sm border border-gray-300 rounded-md" %>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <%= f.label :adress, class:"block text-sm font-medium text-gray-700" %>
+              <%= f.text_field :adress, class:"mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-md sm:text-sm border border-gray-300 rounded-md" %>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <%= f.label :phone, class:"block text-sm font-medium text-gray-700" %>
+              <%= f.text_field :phone, class:"mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-md sm:text-sm border border-gray-300 rounded-md" %>
+            </div>
+            <div class="col-span-6 sm:col-span-3 mb-5">
+              <%= f.label :qty, class:"block text-sm font-medium text-gray-700" %>
+              <%= f.select :qty, options_for_select(1.upto(10)), { default: 1 }, class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+            </div>
+            <%# <div class="col-span-6 sm:col-span-3">
+              <%= f.label :description, class:"block text-sm font-medium text-gray-700" %>
+            <%# <%= f.text_area :description, class:"shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" %> 
+          </div>
+          <%= f.submit "Потврди ја нарачката", class:"inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" %>
+          <%= link_to "Откажи", root_path, class:"inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-green-600 bg-white-600 hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" %> 
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
